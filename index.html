@@ -29,7 +29,7 @@
         <ul class="nav-links">
           <li><a href="#">Home</a></li>
           <li><a href="#">About</a></li>
-          <li><a href="#">Contents</a></li>
+          <li><a href="#booking">Booking</a></li>
           <li><a href="#">Contact</a></li>
         </ul>
 
@@ -44,7 +44,7 @@
     <h1>Trenzor Advertsing Agency</h1>
     
     <p>We help brands grow faster with high-converting advertising strategies,
-      creative desugn, and performance-driven digital campaigns tailored to
+      creative design, and performance-driven digital campaigns tailored to
       your business.
     </p>
 
@@ -56,30 +56,6 @@
     <div class="container">
 
       <div class="service-grid">
-
-        <div class="service-card">
-          <i class="fa-solid fa-code"></i>
-          <h3>Website Development</h3>
-          <p>Modern and responsive websites for your business.</p>
-        </div>
-
-        <div class="service-card">
-          <i class="fa-solid fa-pen-ruler"></i>
-          <h3>Graphic Designing</h3>
-          <p>Creative designs that attract customers instantly.</p>
-        </div>
-
-        <div class="service-card">
-          <i class="fa-solid fa-laptop-code"></i>
-          <h3>UI/UX Designing</h3>
-          <p>Beautiful user experiences with clean interfaces.</p>
-        </div>
-
-        <div class="service-card">
-          <i class="fa-solid fa-palette"></i>
-          <h3>Sketch Designing</h3>
-          <p>Wireframes and design concepts for your projects.</p>
-        </div>
 
         <div class="service-card">
           <i class="fa-solid fa-magnifying-glass-chart"></i>
@@ -95,7 +71,7 @@
 
         <div class="service-card">
           <i class="fa-solid fa-briefcase"></i>
-          <h3>Business Management</h3>
+          <h3> Estate Management</h3>
           <p>Efficient management solutions for your company.</p>
         </div>
 
@@ -118,48 +94,88 @@
           </p>
         </div>
 
-        <button>Make Appointment</button>
+        <div class="book"><!-- Google Calendar Appointment Scheduling begin -->
+          <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+          <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+          <script>
+          (function() {
+            var target = document.currentScript;
+            window.addEventListener('load', function() {
+              calendar.schedulingButton.load({
+                url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1T8IFtFKhsH2fkBxppxcFrWV8mU5R5zQYvMEdFMATQkVMygwepkV_AG0TWbm4A7nPuns2uuGjs?gv=true',
+                color: '#ffffff',
+                label: 'Book appointment',
+                target,
+              });
+            });
+          })();
+          </script>
+          <!-- end Google Calendar Appointment Scheduling --></div>
       </div>
 
     </div>
   </section>
+<!-- ================= PRICING SECTION ================= -->
 
-  <!-- PROCESS -->
+<section class="pricing-section">
+  <div class="pricing-container">
 
-  <section class="process">
+    <!--card 1-->
+    <div class="pcard">
+      <h2>Real Estate Revenue Masterclass</h2>
 
-    <div class="container">
+      <p>Structured advertising training for compaines</p>
 
-      <div class="section-title">
-        <span>Our Process</span>
-        <h2>How we grow Your business</h2>
-      </div>
+      <div class="price" onclick="alert('pay for corporate')">Corporate: 55K</div>
+      <div class="price" onclick="alert('Pay for individual')">Individual: 75K</div>
 
-      <div class="process-steps">
-
-        <div class="step">
-          <div class="step-number">01</div>
-          <h3>Discovery & Research</h3>
-          <p>We Start by understanding your business inside-out</p>
-        </div>
-
-        <div class="step">
-          <div class="step-number">02</div>
-          <h3>Strategy & planning</h3>
-          <p>We don't run ads blindly-we plan first.</p>
-        </div>
-
-        <div class="step">
-          <div class="step-number">03</div>
-          <h3>Campaing Setup & Launch</h3>
-          <p>We design creative and ad copy,setup tracking and launch campaigns.</p>
-        </div>
-
-      </div>
-
+       <p class="bonus">🎁 1-Month Mentorship</p>
     </div>
 
-  </section>
+    <!-- CARD 2 -->
+    <div class="pcard">
+      <h2>Campaign Management</h2>
+
+      <div class="price" onclick="console.log('pay for Google and Youtube')">Google & YouTube Ads: 300K</div>
+      <div class="price" onclick="console.log('pay for Instagram and facebooks')">Instagram & Facebook Ads: 300K</div>
+
+      <div class="bundle">
+        Bundle: 550K <br>
+        <small>8% Discount</small>
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="pcard">
+      <h2>Meta Ads Setup</h2>
+
+      <div class="price big">55K</div>
+
+      <ul>
+        <li>Mentorship</li>
+        <li>Sales Community</li>
+        <li>Investor Contacts</li>
+        <li>Content Scripting</li>
+      </ul>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="pcard">
+      <h2>In-House Training</h2>
+
+      <div class="price big">650K</div>
+
+      <ul>
+        <li>Free Mentorship</li>
+        <li>Management Services</li>
+        <li>Certification</li>
+      </ul>
+    </div>
+
+    
+
+  </div>
+</section>
 
   <!-- FOOTER -->
 
@@ -217,14 +233,10 @@
 
       </div>
 
-      <div class="copyright">
-        Copyright © 2025 Agence. All rights reserved.
-      </div>
-
     </div>
 
   </footer>
-  <script src="Trenzor.js"></script>
-
+  <script src="script.js"></script>
+  
   </body>
 </html>

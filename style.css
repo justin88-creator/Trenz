@@ -50,7 +50,7 @@ nav{
 }
 
 .logo span{
-    color:#ff5733;
+    color:#ff1010;
 }
 
 .nav-links{
@@ -61,20 +61,21 @@ nav{
 }
 
 .nav-links a:hover{
-    color:#ff5733;
+    color:#ff1010;
 }
 
 .quote-btn{
-    background:#ff5733;
+    background:#ff1010;
     color:#fff;
     padding:12px 24px;
-    border-radius:30px;
+    border-radius:15px;
     font-size:14px;
     transition:0.3s;
+    border-style: none;
 }
 
 .quote-btn:hover{
-    background:#ff2d00;
+    background:#ff1010;
 }
 
     /* ================= HERO ================= */
@@ -122,12 +123,12 @@ nav{
 
 .service-card:hover{
     transform:translateY(-10px);
-    border-color:#ff5733;
+    border-color:#ff1010;
 }
 
 .service-card i{
     font-size:40px;
-    color:#ff5733;
+    color:#ff1010;
     margin-bottom:20px;
 }
 
@@ -146,7 +147,7 @@ nav{
 
 .cta{
     margin-top:60px;
-    background:#ff5733;
+    background: linear-gradient(135deg, #ff1010, #e90a0a);
     padding:35px;
     border-radius:20px;
     display:flex;
@@ -165,7 +166,7 @@ nav{
     max-width:500px;
 }
 
-.cta button{
+.cta .book{
     background:#fff;
     color:#111;
     border:none;
@@ -174,11 +175,94 @@ nav{
     cursor:pointer;
     font-weight:600;
     transition:0.3s;
+    padding :10px;
 }
 
-.cta button:hover{
+.cta .book:hover{
     background:#111;
     color:#fff;
+}
+
+/*services offered*/
+
+.pricing-section{
+    background-color: #171717;
+}
+/* CARD DESIGN */
+.pricing-container {
+  color: white;
+  padding: 20px;
+  border-radius: 15px;
+  transition: 0.3s;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  display: grid;
+  grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+  gap:30px;
+  overflow: hidden;
+  transition:0.4s;
+  border:1px solid transparent;
+}
+.pcard{
+    background: linear-gradient(135deg, #ff1010, #e90a0a);
+    padding: 20px;
+    border-radius:20px;
+    transition:0.4s;
+    
+
+}
+/* Hover Effect */
+.pcard:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 1px 10px 5px #ff1010 ;
+  transform:translateY(-10px);
+}
+
+/* Title */
+.pcard h2 {
+  margin-bottom: 10px;
+}
+
+/* Price */
+.price {
+  background: white;
+  color: #ff1010;
+  padding: 8px;
+  margin: 8px 0;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.price:hover{
+    box-shadow: 0px 2px 2px 1px rgb(180, 180, 179);
+    
+}
+.price.big {
+  font-size: 28px;
+  text-align: center;
+}
+
+/* Bundle Box */
+.bundle {
+  background: black;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* List */
+ul {
+  margin-top: 10px;
+}
+
+ul li {
+  margin: 5px 0;
+}
+
+/* Bonus */
+.bonus {
+  margin-top: 10px;
+  font-weight: bold;
 }
 
 /* ================= PROCESS ================= */
@@ -193,7 +277,7 @@ nav{
 }
 
 .section-title span{
-    color:#ff5733;
+    color:#ff1010;
     font-weight:600;
     text-transform:uppercase;
     font-size:14px;
@@ -278,7 +362,7 @@ footer{
 }
 
 .footer-logo span{
-    color:#ff5733;
+    color:#ff1010;
 }
 
 .footer-links h3{
@@ -291,7 +375,7 @@ footer{
 }
 
 .footer-links ul li a:hover{
-    color:#ff5733;
+    color:#ff1010;
 }
 
 .socials{
@@ -312,7 +396,7 @@ footer{
 }
 
 .socials a:hover{
-    background:#ff5733;
+    background:#ff1010;
     color:#fff;
 }
 
@@ -345,3 +429,4 @@ footer{
     font-size:35px;
     }
 }
+
