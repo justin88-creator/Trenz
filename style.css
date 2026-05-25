@@ -172,6 +172,7 @@ nav{
     border:none;
     padding:15px 30px;
     border-radius:30px;
+    width: 40px;
     cursor:pointer;
     font-weight:600;
     transition:0.3s;

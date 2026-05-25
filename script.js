@@ -51,3 +51,7 @@ pcards.forEach(card => {
 });
 
 
+//for  payment
+function payer() {
+  window.location.href = "https://paystack.com/buy/google--youtube-ads-yvthlu";
+}
