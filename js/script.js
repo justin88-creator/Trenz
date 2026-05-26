@@ -85,51 +85,41 @@ if (navToggle && navLinks) {
 })();
 
 // for payment code
-document.getElementById("payBtn").addEventListener("click", payNow);
+document.getElementById("btn1").addEventListener("click",()=>payNow(5500000));
 
-function payNow(){
+document.getElementById("btn2").addEventListener("click",()=>payNow(7500000));
 
-alert("Button clicked");
+document.getElementById("btn3").addEventListener("click",()=>payNow(30000000));
 
-const email =
-prompt("Enter email");
+document.getElementById("btn4").addEventListener("click",()=>payNow(30000000));
 
-if(!email){
-return;
-}
+document.getElementById("btn5").addEventListener("click",()=>payNow(5500000));
 
-alert("Opening Paystack");
+document.getElementById("btn6").addEventListener("click",()=>payNow(65000000));
 
-let handler =
-PaystackPop.setup({
+function payNow(amount) {
+  alert('Button clicked');
 
-key:
-"pk_test_d45a93ab08c13a816151fa93b201a8af03294932",
+  const email = prompt('Enter email');
 
-email: email,
+  if (!email) {
+    return;
+  }
 
-amount: 500000,
+  alert('Opening Paystack');
 
-currency: "NGN",
+  let handler = PaystackPop.setup({
+    key: 'pk_test_d45a93ab08c13a816151fa93b201a8af03294932',
+    email: email,
+    amount: amount,
+    currency: 'NGN',
+    callback: function (response) {
+      alert('Payment successful');
+    },
+    onClose: function () {
+      alert('Payment closed');
+    },
+  });
 
-callback:function(response){
-
-alert(
-"Payment successful"
-);
-
-},
-
-onClose:function(){
-
-alert(
-"Payment closed"
-);
-
-}
-
-});
-
-handler.openIframe();
-
+  handler.openIframe();
 }
