@@ -85,20 +85,21 @@ if (navToggle && navLinks) {
 })();
 
 // for payment code
-document.getElementById("btn1").addEventListener("click",()=>payNow(5500000));
+const btn1 = document.getElementById('btn1');
+const btn2 = document.getElementById('btn2');
+const btn3 = document.getElementById('btn3');
+const btn4 = document.getElementById('btn4');
+const btn5 = document.getElementById('btn5');
+const btn6 = document.getElementById('btn6');
 
-document.getElementById("btn2").addEventListener("click",()=>payNow(7500000));
-
-document.getElementById("btn3").addEventListener("click",()=>payNow(30000000));
-
-document.getElementById("btn4").addEventListener("click",()=>payNow(30000000));
-
-document.getElementById("btn5").addEventListener("click",()=>payNow(5500000));
-
-document.getElementById("btn6").addEventListener("click",()=>payNow(65000000));
+if (btn1) btn1.addEventListener('click', () => payNow(5500000));
+if (btn2) btn2.addEventListener('click', () => payNow(7500000));
+if (btn3) btn3.addEventListener('click', () => payNow(30000000));
+if (btn4) btn4.addEventListener('click', () => payNow(30000000));
+if (btn5) btn5.addEventListener('click', () => payNow(5500000));
+if (btn6) btn6.addEventListener('click', () => payNow(65000000));
 
 function payNow(amount) {
-
   const email = prompt('Enter email');
 
   if (!email) {
@@ -107,13 +108,27 @@ function payNow(amount) {
 
   alert('Opening Paystack');
 
-  let handler = PaystackPop.setup({
+  const handler = PaystackPop.setup({
     key: 'pk_test_d45a93ab08c13a816151fa93b201a8af03294932',
     email: email,
     amount: amount,
     currency: 'NGN',
-    callback: function (response) {
-      alert('Payment successful');
+    ref: 'REF_' + Date.now(),
+    callback: async function (response) {
+      try {
+        const res = await fetch(`/api/verify-payment?reference=${response.reference}`);
+        const data = await res.json();
+
+        if (data.paymentStatus === 'success') {
+          alert('Payment verified!');
+          window.location.href = 'success.html';
+        } else {
+          alert('Payment verification failed');
+        }
+      } catch (error) {
+        console.error(error);
+        alert('Something went wrong');
+      }
     },
     onClose: function () {
       alert('Payment closed');
