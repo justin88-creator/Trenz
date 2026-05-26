@@ -1,25 +1,33 @@
+/* ========== GLOBAL STYLES ========== */
+/* Reset and baseline styling for entire document */
+
+/* Reset default margins and padding for all elements */
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
+/* Body typography and color scheme */
 body{
-    font-family:'Poppins', sans-serif;
-    background:#fff;
-    color:#222;
-    line-height:1.6;
+    font-family:'Poppins', sans-serif;  /* Modern sans-serif font */
+    background:#fff;                     /* White background */
+    color:#222;                          /* Dark text color */
+    line-height:1.6;                     /* Comfortable line spacing */
 }
 
+/* Link styling */
 a{
-text-decoration:none;
-color:inherit;
+    text-decoration:none;
+    color:inherit;
 }
 
+/* List styling */
 ul{
     list-style:none;
 }
 
+/* Container - max-width responsive wrapper for all sections */
 .container{
     width:90%;
     max-width:1200px;
@@ -27,6 +35,7 @@ ul{
 }
 
     /* ================= HEADER ================= */
+    /* Navigation bar positioning and layout */
 
 header{
     position:absolute;
@@ -37,22 +46,26 @@ header{
     padding:20px 0;
 }
 
+/* Flexbox layout for navigation items */
 nav{
     display:flex;
     justify-content:space-between;
     align-items:center;
 }
 
+/* Logo styling - "Trenzor" brand name */
 .logo{
     font-size:28px;
     font-weight:700;
     color:#fff;
 }
 
+/* Logo accent - red color for "Trenzor" part */
 .logo span{
     color:#ff2a2a;
 }
 
+/* Navigation links layout */
 .nav-links{
     display:flex;
     gap:30px;
@@ -60,10 +73,12 @@ nav{
     font-size:14px;
 }
 
+/* Navigation link hover effect */
 .nav-links a:hover{
     color:#ff1010;
 }
 
+/* Mobile hamburger menu toggle button - hidden by default */
 .nav-toggle{
     display:none;
     background:none;
@@ -73,6 +88,7 @@ nav{
     margin-left:auto;
 }
 
+/* Hamburger menu lines */
 .nav-toggle span{
     display:block;
     width:24px;
@@ -83,18 +99,22 @@ nav{
     transition:transform 0.3s ease, opacity 0.3s ease;
 }
 
+/* Hamburger animation - open state (first line) */
 .nav-toggle.open span:nth-child(1){
     transform: translateY(7px) rotate(45deg);
 }
 
+/* Hamburger animation - open state (middle line fades out) */
 .nav-toggle.open span:nth-child(2){
     opacity:0;
 }
 
+/* Hamburger animation - open state (third line) */
 .nav-toggle.open span:nth-child(3){
     transform: translateY(-7px) rotate(-45deg);
 }
 
+/* CTA button styling */
 .quote-btn{
     background:#ff1010;
     color:#fff;
@@ -110,9 +130,11 @@ nav{
 }
 
     /* ================= HERO ================= */
+    /* Full-screen banner with background image */
 
 .hero{
     height:500px;
+    /* Gradient overlay + background image with centering */
     background:
     linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
     url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop')
@@ -131,18 +153,21 @@ nav{
 }
 
     /* ================= SERVICES ================= */
+    /* Services grid displaying 4 service cards */
 
 .services{
     background:#171717;
     padding:80px 0;
 }
 
+/* Responsive grid - auto-fit allows cards to wrap naturally */
 .service-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
     gap:30px;
 }
 
+/* Individual service card styling */
 .service-card{
     background:#111;
     padding:40px 20px;
@@ -152,29 +177,34 @@ nav{
     border:1px solid transparent;
 }
 
+/* Service card hover effect - lift and highlight */
 .service-card:hover{
     transform:translateY(-10px);
     border-color:#ff1010;
 }
 
+/* Service icon styling - red color and size */
 .service-card i{
     font-size:40px;
     color:#ff1010;
     margin-bottom:20px;
 }
 
+/* Service card heading */
 .service-card h3{
     color:#fff;
     font-size:20px;
     margin-bottom:10px;
 }
 
+/* Service card description text */
 .service-card p{
     color:#aaa;
     font-size:14px;
 }
 
-    /* ================= CTA ================= */
+    /* ================= CTA (CALL TO ACTION) ================= */
+    /* Red banner with contact info and booking button */
 
 .cta{
     margin-top:60px;
@@ -197,6 +227,7 @@ nav{
     max-width:500px;
 }
 
+/* Booking button styling - white background with red text on hover */
 .cta .book{
     display:inline-flex;
     align-items:center;
@@ -220,7 +251,7 @@ nav{
     transform:translateY(-2px);
 }
 
-/* Booking button (native) */
+/* Native booking button styling */
 .booking-btn{
         display:inline-flex;
         align-items:center;
@@ -240,21 +271,27 @@ nav{
 
 .booking-btn:hover{background:#111;color:#fff;transform:translateY(-2px)}
 
-/* Responsive adjustments for the booking popup behavior */
+/* ================= RESPONSIVE ADJUSTMENTS - CTA SECTION ================= */
+
+/* Medium screens - 900px and below (tablets) */
 @media (max-width:900px){
     .cta{padding:24px}
     .cta h2{font-size:26px}
 }
 
+/* Small screens - 600px and below (small tablets/phones) */
 @media (max-width:600px){
     .cta{flex-direction:column;align-items:flex-start;gap:12px;padding:20px}
     .booking-btn{width:100%;max-width:none;min-width:0;padding:12px;border-radius:12px;box-shadow:none}
 }
 
+/* Extra small screens - 380px and below (small phones) */
 @media (max-width:380px){
     .cta h2{font-size:20px}
     .cta p{font-size:14px}
     .booking-btn{font-size:14px;padding:10px}
+    .pricing-input-wrap { justify-content:flex-start; }
+    .pricing-email-input { max-width:100%; width:100%; }
 }
 
 /*services offered*/
@@ -276,27 +313,59 @@ nav{
   transition:0.4s;
   border:1px solid transparent;
 }
+.pricing-input-wrap {
+  width:100%;
+  margin-top:20px;
+  display:flex;
+  justify-content:center;
+}
+.pricing-email-input {
+  width:100%;
+  max-width:420px;
+  padding:16px 18px;
+  border-radius:14px;
+  border:1px solid #ddd;
+  font-size:16px;
+  color:#222;
+  outline:none;
+  transition:box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.pricing-email-input:focus {
+  border-color:#ff1010;
+  box-shadow:0 0 0 4px rgba(255,16,16,0.12);
+}
+
+/* Email input invalid state - shows error styling when email is missing */
+.pricing-email-input.invalid {
+  border-color:#e74c3c;
+  box-shadow:0 0 0 4px rgba(231,76,60,0.18);
+  color:#e74c3c;
+}
+
+/* ================= INDIVIDUAL PRICING CARDS ================= */
+/* Red gradient background for each pricing card */
+
 .pcard{
     background: linear-gradient(135deg, #ff1010, #e90a0a);
     padding: 20px;
     border-radius:20px;
     transition:0.4s;
-    
-
 }
-/* Hover Effect */
+
+/* Pricing card hover effect - lift and glow */
 .pcard:hover {
   transform: translateY(-10px) scale(1.02);
   box-shadow: 0 1px 10px 5px #ff1010 ;
-  transform:translateY(-10px);
 }
 
-/* Title */
+/* Pricing card title */
 .pcard h2 {
   margin-bottom: 10px;
 }
 
-/* Price */
+/* ================= PRICE DISPLAY ================= */
+/* Individual price button styling */
+
 .price {
   background: white;
   color: #ff1010;
@@ -308,14 +377,17 @@ nav{
 
 .price:hover{
     box-shadow: 0px 2px 2px 1px rgb(180, 180, 179);
-    
 }
+
+/* Large price display for main pricing tiers */
 .price.big {
   font-size: 28px;
   text-align: center;
 }
 
-/* Bundle Box */
+/* ================= BUNDLE BOX ================= */
+/* Special pricing bundle display */
+
 .bundle {
   background: black;
   padding: 10px;
@@ -324,7 +396,9 @@ nav{
   text-align: center;
 }
 
-/* List */
+/* ================= FEATURES LIST ================= */
+/* List styling for card features */
+
 ul {
   margin-top: 10px;
 }
@@ -333,13 +407,16 @@ ul li {
   margin: 5px 0;
 }
 
-/* Bonus */
+/* ================= BONUS TEXT ================= */
+/* Emphasis styling for special offers */
+
 .bonus {
   margin-top: 10px;
   font-weight: bold;
 }
 
 /* ================= PROCESS ================= */
+/* Section for displaying business process steps */
 
 .process{
     padding:100px 0;
@@ -369,6 +446,7 @@ ul li {
     gap:40px;
 }
 
+/* Individual process step styling - circular containers */
 .step{
     width:250px;
     height:250px;
@@ -414,6 +492,7 @@ ul li {
 }
 
 /* ================= FOOTER ================= */
+/* Website footer with multiple link sections and social media */
 
 footer{
     background:#111;
@@ -421,6 +500,7 @@ footer{
     padding:70px 0 20px;
 }
 
+/* Footer grid layout - 4 columns for different sections */
 .footer-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
@@ -428,6 +508,7 @@ footer{
     margin-bottom:50px;
 }
 
+/* Footer logo styling */
 .footer-logo{
     color:#fff;
     font-size:30px;
@@ -439,11 +520,13 @@ footer{
     color:#ff1010;
 }
 
+/* Footer section headings */
 .footer-links h3{
     color:#fff;
     margin-bottom:20px;
 }
 
+/* Footer link list items */
 .footer-links ul li{
     margin-bottom:10px;
 }
@@ -452,6 +535,7 @@ footer{
     color:#ff1010;
 }
 
+/* Social media links styling */
 .socials{
     display:flex;
     gap:100px;
@@ -474,6 +558,7 @@ footer{
     color:#fff;
 }
 
+/* Copyright section styling */
 .copyright{
     text-align:center;
     border-top:1px solid #222;
@@ -481,20 +566,24 @@ footer{
     font-size:14px;
 }
 
-/* ================= MOBILE ================= */
+/* ================= RESPONSIVE DESIGN - MOBILE & TABLET ================= */
+/* Media queries for screens 900px and below (tablets and mobile devices) */
 
 @media(max-width:900px){
 
+    /* Navigation adjustments for mobile */
     nav{
     flex-direction:column;
     gap:20px;
     position:relative;
     }
 
+    /* Show hamburger toggle button */
     .nav-toggle{
     display:block;
     }
 
+    /* Mobile menu styling - absolute positioned dropdown */
     .nav-links{
     position:absolute;
     top:100%;
@@ -510,10 +599,12 @@ footer{
     z-index:999;
     }
 
+    /* Show menu when active */
     .nav-links.show{
     display:flex;
     }
 
+    /* Mobile menu list items */
     .nav-links li{
     width:100%;
     text-align:center;
@@ -525,10 +616,12 @@ footer{
     padding:10px 0;
     }
 
+    /* Reduce hero title size for mobile */
     .hero h1{
     font-size:45px;
     }
 
+    /* Center CTA section on mobile */
     .cta{
     text-align:center;
     justify-content:center;
@@ -540,8 +633,23 @@ footer{
     margin:0 auto;
     }
 
+    /* Reduce section title size for mobile */
     .section-title h2{
     font-size:35px;
+    }
+
+    /* Pricing grid: 2 columns on tablet (900px and below) */
+    .pricing-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ================= RESPONSIVE - MOBILE SINGLE COLUMN ================= */
+/* Mobile screens - 600px and below: stack cards in single column */
+
+@media(max-width:600px){
+    .pricing-container {
+        grid-template-columns: 1fr;
     }
 }
 

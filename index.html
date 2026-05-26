@@ -1,31 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Character encoding and viewport settings for responsive design -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Agency Services Page</title>
+  <title>Trenzor Advertising Agency - Services & Pricing</title>
 
-  <!-- Google Font -->
+  <!-- Google Font - Poppins for modern typography -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Font Awesome -->
+  <!-- Font Awesome Icons - Used for service icons and social media links -->
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
     
+  <!-- Main stylesheet containing all design and responsive rules -->
   <link rel="stylesheet" href="css/style.css"/>
-
 
 </head>
 
 <body>
 
-  <!-- HEADER -->
+  <!-- ========== HEADER SECTION ========== -->
+  <!-- Contains navigation bar with logo and menu links -->
+  <!-- Nav toggle button for mobile responsive menu -->
 
   <header>
     <div class="container">
       <nav>
+        <!-- Logo: "Trenzor" text with "Advertising" as secondary brand text -->
         <div class="logo"><span>Trenzor</span>Advertising</div>
 
+        <!-- Main navigation links - responsive menu for desktop/mobile -->
         <ul class="nav-links">
           <li><a href="#">Home</a></li>
           <li><a href="#">About</a></li>
@@ -33,6 +38,7 @@
           <li><a href="#">Contact</a></li>
         </ul>
 
+        <!-- Mobile menu toggle button - hamburger icon with 3 spans -->
         <button class="nav-toggle" aria-label="Open navigation">
           <span></span>
           <span></span>
@@ -42,7 +48,8 @@
     </div>
   </header>
 
-  <!-- HERO -->
+  <!-- ========== HERO SECTION ========== -->
+  <!-- Large banner section with background image and company tagline -->
 
   <section class="hero">
     <h1>Trenzor Advertsing Agency</h1>
@@ -58,39 +65,42 @@
 
   <section class="services">
     <div class="container">
-
+      <!-- Grid layout displaying 4 service cards with icons and descriptions -->
       <div class="service-grid">
-
+        <!-- Service Card 1: SEO & Content -->
         <div class="service-card">
           <i class="fa-solid fa-magnifying-glass-chart"></i>
           <h3>SEO & Content</h3>
           <p>Grow traffic with powerful optimization strategies.</p>
         </div>
 
+        <!-- Service Card 2: Digital Marketing -->
         <div class="service-card">
           <i class="fa-solid fa-chart-line"></i>
           <h3>Digital Marketing</h3>
           <p>Reach more customers with online campaigns.</p>
         </div>
 
+        <!-- Service Card 3: Estate Management -->
         <div class="service-card">
           <i class="fa-solid fa-briefcase"></i>
           <h3> Estate Management</h3>
           <p>Efficient management solutions for your company.</p>
         </div>
 
+        <!-- Service Card 4: Market Analysis -->
         <div class="service-card">
           <i class="fa-solid fa-chart-pie"></i>
           <h3>Market Analysis</h3>
           <p>Understand your audience and improve performance.</p>
         </div>
-
       </div>
 
-      <!-- Call To Action (CTA) -->
-
+      <!-- ========== CALL TO ACTION (CTA) SECTION ========== -->
+      <!-- Displays contact information and booking button -->
       <div class="cta">
         <div>
+          <!-- Business contact number -->
           <h2>+2348132680390</h2>
           <p>
            Let's analyze your business and show you how to scale
@@ -98,47 +108,51 @@
           </p>
         </div>
 
+        <!-- Booking button - triggers Google Calendar popup (see script.js) -->
         <div class="book">
           <button id="bookingBtn" class="booking-btn" aria-label="Book appointment">Book appointment</button>
         </div>
       </div>
-
     </div>
   </section>
-<!-- ================= PRICING SECTION ================= -->
-
+<!-- ========== PRICING SECTION ========== -->
+<!-- Contains 4 pricing cards for different service packages -->
+<!-- Email input field required to initiate payment via Paystack -->
 <section class="pricing-section">
   <div class="pricing-container">
-
-    <!--card 1-->
+    <!-- PRICING CARD 1: Real Estate Revenue Masterclass -->
     <div class="pcard">
       <h2>Real Estate Revenue Masterclass</h2>
 
       <p>Structured advertising training for compaines</p>
 
+      <!-- Price buttons with unique IDs - btn1 and btn2 trigger payment -->
       <div class="price" id="btn1">Corporate: 55K</div>
       <div class="price" id="btn2">Individual: 75K</div>
 
        <p class="bonus">🎁 1-Month Mentorship</p>
     </div>
 
-    <!-- CARD 2 -->
+    <!-- PRICING CARD 2: Campaign Management -->
     <div class="pcard">
       <h2>Campaign Management</h2>
 
+      <!-- Individual pricing options for different ad platforms -->
       <div class="price" id="btn3">Google & YouTube Ads: 300K</div>
       <div class="price" id="btn4">Instagram & Facebook Ads: 300K</div>
 
+      <!-- Bundle pricing with discount info -->
       <div class="bundle">
         Bundle: 550K <br>
         <small>8% Discount</small>
       </div>
     </div>
 
-    <!-- CARD 3 -->
+    <!-- PRICING CARD 3: Meta Ads Setup -->
     <div class="pcard">
       <h2>Meta Ads Setup</h2>
 
+      <!-- Large price display for this service tier -->
       <div class="price big" id="btn5">55K</div>
 
       <ul>
@@ -149,10 +163,11 @@
       </ul>
     </div>
 
-    <!-- CARD 4 -->
+    <!-- PRICING CARD 4: In-House Training -->
     <div class="pcard">
       <h2>In-House Training</h2>
 
+      <!-- Large price display for premium service tier -->
       <div class="price big" id="btn6">650K</div>
 
       <ul>
@@ -162,19 +177,25 @@
       </ul>
     </div>
 
-    
+  </div>
 
+  <!-- Email input field - REQUIRED before payment -->
+  <!-- Validation shows red border and warning if empty on button click -->
+  <div class="pricing-input-wrap">
+    <input type="email" id="email" placeholder="Enter your email" class="pricing-email-input" />
   </div>
 </section>
 
-  <!-- FOOTER -->
-
+  <!-- ========== FOOTER SECTION ========== -->
+  <!-- Contains company info, links, social media, and contact address -->
   <footer>
 
     <div class="container">
 
+      <!-- Footer grid with 4 columns: company info, useful links, support, address -->
       <div class="footer-grid">
 
+        <!-- Column 1: Company branding and social links -->
         <div>
           <div class="footer-logo"><span>Trenzor</span>Agency.</div>
 
@@ -184,12 +205,14 @@
             creative design, and performance advertising.
           </p>
 
+          <!-- Social media links with icons -->
           <div class="socials">
             <a href="#"><i class="fab fa-facebook-f"></i>TrenzorAds</a>
             <a href="#"><i class="fab fa-instagram"></i>Trenzoradsagency</a>
           </div>
         </div>
 
+        <!-- Column 2: Useful navigation links -->
         <div class="footer-links">
           <h3>Useful Links</h3>
 
@@ -201,6 +224,7 @@
           </ul>
         </div>
 
+        <!-- Column 3: Support and help resources -->
         <div class="footer-links">
           <h3>Support</h3>
 
@@ -210,6 +234,7 @@
           </ul>
         </div>
 
+        <!-- Column 4: Office location and address -->
         <div class="footer-links">
           <h3>Address</h3>
 
@@ -226,7 +251,11 @@
     </div>
 
   </footer>
+
+  <!-- ========== SCRIPTS ========== -->
+  <!-- Paystack payment gateway integration library - enables online payment processing -->
   <script src="https://js.paystack.co/v1/inline.js"></script>
+  <!-- Main JavaScript file - handles all interactions, animations, and payment logic -->
   <script src="js/script.js"></script>
   
   </body>
