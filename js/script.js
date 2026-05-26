@@ -110,7 +110,7 @@ function payNow(amount) {
   alert('Opening Paystack');
 
   let handler = PaystackPop.setup({
-    key: 'YOUR_PUBLIC_KEY',
+    key: 'pk_test_d45a93ab08c13a816151fa93b201a8af03294932',
     email: email,
     amount: amount,
     currency: 'NGN',
