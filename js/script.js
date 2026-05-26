@@ -100,7 +100,8 @@ if (btn5) btn5.addEventListener('click', () => payNow(5500000));
 if (btn6) btn6.addEventListener('click', () => payNow(65000000));
 
 function payNow(amount) {
-  const email = prompt('Enter email');
+
+  const email = prompt('Enter email:');
 
   if (!email) {
     return;
@@ -108,32 +109,40 @@ function payNow(amount) {
 
   alert('Opening Paystack');
 
-  const handler = PaystackPop.setup({
-    key: 'pk_test_d45a93ab08c13a816151fa93b201a8af03294932',
+  let handler = PaystackPop.setup({
+    key: 'YOUR_PUBLIC_KEY',
     email: email,
     amount: amount,
     currency: 'NGN',
     ref: 'REF_' + Date.now(),
-    callback: async function (response) {
-      try {
-        const res = await fetch(`/api/verify-payment?reference=${response.reference}`);
-        const data = await res.json();
-
-        if (data.paymentStatus === 'success') {
-          alert('Payment verified!');
-          window.location.href = 'success.html';
-        } else {
-          alert('Payment verification failed');
-        }
-      } catch (error) {
-        console.error(error);
-        alert('Something went wrong');
-      }
+    callback: function (response) {
+      verifyPayment(response.reference);
     },
     onClose: function () {
       alert('Payment closed');
-    },
+    }
   });
 
   handler.openIframe();
+
+}
+
+
+
+async function verifyPayment(reference) {
+  try {
+    const res = await fetch(`/api/verify-payment?reference=${reference}`);
+    const data = await res.json();
+
+    if (data.paymentStatus === 'success') {
+      alert('Payment verified!');
+      window.location.href = 'success.html';
+    } else {
+      alert('Payment verification failed');
+    }
+  } catch (error) {
+    console.error(error);
+    alert('Something went wrong');
+  }
+
 }
