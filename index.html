@@ -12,7 +12,7 @@
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
     
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
 
 
 </head>
@@ -33,7 +33,11 @@
           <li><a href="#">Contact</a></li>
         </ul>
 
-      
+        <button class="nav-toggle" aria-label="Open navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </nav>
     </div>
   </header>
@@ -94,23 +98,9 @@
           </p>
         </div>
 
-        <div  id="booking" class="book"><!-- Google Calendar Appointment Scheduling begin -->
-          <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
-          <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
-          <script>
-          (function() {
-            var target = document.currentScript;
-            window.addEventListener('load', function() {
-              calendar.schedulingButton.load({
-                url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1T8IFtFKhsH2fkBxppxcFrWV8mU5R5zQYvMEdFMATQkVMygwepkV_AG0TWbm4A7nPuns2uuGjs?gv=true',
-                color: '#ffffff',
-                label: 'Book appointment',
-                target,
-              });
-            });
-          })();
-          </script>
-          <!-- end Google Calendar Appointment Scheduling --></div>
+        <div class="book">
+          <button id="bookingBtn" class="booking-btn" aria-label="Book appointment">Book appointment</button>
+        </div>
       </div>
 
     </div>
@@ -136,7 +126,7 @@
     <div class="pcard">
       <h2>Campaign Management</h2>
 
-      <div class="price" id="price" onclick=" payer()">Google & YouTube Ads: 300K</div>
+      <div class="price" id="payBtn">Google & YouTube Ads: 300K</div>
       <div class="price" onclick="console.log('pay for Instagram and facebooks')">Instagram & Facebook Ads: 300K</div>
 
       <div class="bundle">
@@ -236,7 +226,8 @@
     </div>
 
   </footer>
-  <script src="script.js"></script>
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+  <script src="js/script.js"></script>
   
   </body>
 </html>
