@@ -98,7 +98,6 @@ document.getElementById("btn5").addEventListener("click",()=>payNow(5500000));
 document.getElementById("btn6").addEventListener("click",()=>payNow(65000000));
 
 function payNow(amount) {
-  alert('Button clicked');
 
   const email = prompt('Enter email');
 
