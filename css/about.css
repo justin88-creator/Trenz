@@ -1,0 +1,715 @@
+/* ========== GLOBAL STYLES ========== */
+/* Reset and baseline styling for entire document */
+
+/* Reset default margins and padding for all elements */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* Body typography and color scheme */
+body{
+    font-family:'Poppins', sans-serif;  /* Modern sans-serif font */
+    background:#fff;                     /* White background */
+    color:#222;                          /* Dark text color */
+    line-height:1.6;                     /* Comfortable line spacing */
+}
+
+/* Link styling */
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* List styling */
+ul{
+    list-style:none;
+}
+
+/* Container - max-width responsive wrapper for all sections */
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* ================= HEADER ================= */
+/* Navigation bar positioning and layout */
+
+header{
+    position:absolute;
+    width:100%;
+    top:0;
+    left:0;
+    z-index:1000;
+    padding:20px 0;
+    background-color: #222;
+}
+
+/* Flexbox layout for navigation items */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+/* Logo styling - "Trenzor" brand name */
+.logo{
+    font-size:28px;
+    font-weight:700;
+    color:#fff;
+}
+
+/* Logo accent - red color for "Trenzor" part */
+.logo span{
+    color:#ff2a2a;
+}
+
+/* Navigation links layout */
+.nav-links{
+    display:flex;
+    gap:30px;
+    color:#fff;
+    font-size:14px;
+}
+
+/* Navigation link hover effect */
+.nav-links a:hover{
+    color:#ff1010;
+}
+
+/* Mobile hamburger menu toggle button - hidden by default */
+.nav-toggle{
+    display:none;
+    background:none;
+    border:none;
+    cursor:pointer;
+    padding:10px;
+    margin-left:auto;
+}
+
+/* Hamburger menu lines */
+.nav-toggle span{
+    display:block;
+    width:24px;
+    height:2px;
+    margin:5px 0;
+    background:#fff;
+    border-radius:2px;
+    transition:transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Hamburger animation - open state (first line) */
+.nav-toggle.open span:nth-child(1){
+    transform: translateY(7px) rotate(45deg);
+}
+
+/* Hamburger animation - open state (middle line fades out) */
+.nav-toggle.open span:nth-child(2){
+    opacity:0;
+}
+
+/* Hamburger animation - open state (third line) */
+.nav-toggle.open span:nth-child(3){
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ================= FOOTER ================= */
+/* Website footer with multiple link sections and social media */
+
+footer{
+    background:#111;
+    color:#aaa;
+    padding:70px 0 20px;
+}
+
+/* Footer grid layout - 4 columns for different sections */
+.footer-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+    gap:40px;
+    margin-bottom:50px;
+}
+
+/* Footer logo styling */
+.footer-logo{
+    color:#fff;
+    font-size:30px;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.footer-logo span{
+    color:#ff1010;
+}
+
+/* Footer section headings */
+.footer-grid h4{
+    color:#fff;
+    margin-bottom:20px;
+}
+
+/* Footer link list items */
+.footer-grid ul li{
+    margin-bottom:10px;
+}
+
+.footer-grid ul li a:hover{
+    color:#ff1010;
+}
+
+.footer-grid p{
+    margin-bottom:10px;
+    font-size:14px;
+}
+
+.footer-grid p i{
+    margin-right:8px;
+    color:#ff1010;
+}
+
+/* Social media links styling */
+.social-links{
+    display:flex;
+    gap:15px;
+    margin-top:20px;
+}
+
+.social-links a{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background:#222;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    transition:0.3s;
+    color:#fff;
+    font-size:18px;
+}
+
+.social-links a:hover{
+    background:#ff1010;
+    color:#fff;
+}
+
+/* Footer bottom - copyright section styling */
+.footer-bottom{
+    text-align:center;
+    border-top:1px solid #222;
+    padding-top:20px;
+    font-size:14px;
+}
+
+/* ========== ABOUT PAGE SPECIFIC STYLES ========== */
+
+/* About Hero Section */
+.about-hero {
+  background: linear-gradient(135deg, #ff1010 0%, #e90a0a 100%);
+  color: white;
+  padding: 120px 0 80px 0;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.about-hero h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  letter-spacing: -1px;
+}
+
+.about-hero p {
+  font-size: 18px;
+  font-weight: 300;
+  opacity: 0.95;
+  margin-bottom: 40px;
+}
+
+/* CEO Container */
+.ceo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.ceo-image-wrapper {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 15px;
+  border: 4px solid white;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.ceo-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ceo-name {
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+}
+
+/* About Section */
+.about-section {
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  margin-bottom: 80px;
+}
+
+.about-column {
+  display: grid;
+  gap: 20px;
+}
+
+/* About Card */
+.about-card {
+  background: #f8f8f8;
+  padding: 40px;
+  border-radius: 15px;
+  border-left: 4px solid #ff1010;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(255, 16, 16, 0.15);
+}
+
+.about-card h2 {
+  color: #ff1010;
+  font-size: 24px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.about-card p {
+  color: #555;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* Values List */
+.value-card {
+  background: #ffffff;
+  padding: 28px 24px;
+  border-radius: 15px;
+  border: 1px solid #f0f0f0;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 24px rgba(255, 16, 16, 0.12);
+}
+
+.value-card i {
+  font-size: 26px;
+  color: #ff1010;
+  margin-bottom: 18px;
+}
+
+.value-card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.value-card p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* Why Choose Us Section */
+.why-choose-us {
+  margin-top: 60px;
+}
+
+.why-choose-us h2 {
+  text-align: center;
+  font-size: 36px;
+  color: #222;
+  margin-bottom: 50px;
+  font-weight: 700;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.benefit-item {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-top: 3px solid transparent;
+}
+
+.benefit-item:hover {
+  transform: translateY(-8px);
+  border-top-color: #ff1010;
+  box-shadow: 0 10px 25px rgba(255, 16, 16, 0.15);
+}
+
+.benefit-item i {
+  font-size: 32px;
+  color: #ff1010;
+  margin-bottom: 15px;
+}
+
+.benefit-item h3 {
+  font-size: 20px;
+  color: #222;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.benefit-item p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* About CTA Section */
+.about-cta {
+  background: linear-gradient(135deg, #ff1010 0%, #e90a0a 100%);
+  color: white;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.about-cta h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.about-cta p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  opacity: 0.95;
+}
+
+.cta-button {
+  display: inline-block;
+  background: white;
+  color: #ff1010;
+  padding: 14px 40px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  background: #f0f0f0;
+}
+
+/* ========== RESPONSIVE STYLES ========== */
+
+/* Medium screens - 900px and below (tablets) */
+@media (max-width: 900px) {
+  nav {
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    display: none;
+    padding: 20px 0;
+    z-index: 999;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links li a {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .about-hero h1 {
+    font-size: 36px;
+  }
+
+  .about-hero p {
+    font-size: 16px;
+  }
+
+  .ceo-image-wrapper {
+    width: 160px;
+    height: 160px;
+  }
+
+  .ceo-name {
+    font-size: 18px;
+  }
+
+  .about-section {
+    padding: 60px 0;
+  }
+
+  .about-content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .about-column {
+    gap: 15px;
+  }
+
+  .about-card {
+    padding: 25px;
+  }
+
+  .about-card h2 {
+    font-size: 20px;
+  }
+
+  .value-card {
+    padding: 20px;
+  }
+
+  .value-card h3 {
+    font-size: 16px;
+  }
+
+  .value-card p {
+    font-size: 13px;
+  }
+
+  .why-choose-us h2 {
+    font-size: 28px;
+    margin-bottom: 35px;
+  }
+
+  .benefits-grid {
+    grid-template-columns: repeat(2, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .about-cta h2 {
+    font-size: 28px;
+  }
+
+  .about-cta p {
+    font-size: 16px;
+  }
+
+}
+
+/* Mobile screens - 768px and below */
+@media (max-width: 768px) {
+  .about-hero h1 {
+    font-size: 32px;
+  }
+
+  .about-hero p {
+    font-size: 15px;
+  }
+
+  .ceo-image-wrapper {
+    width: 150px;
+    height: 150px;
+  }
+
+  .ceo-name {
+    font-size: 17px;
+  }
+
+  .about-card {
+    padding: 20px;
+  }
+
+  .about-card h2 {
+    font-size: 18px;
+  }
+
+  .about-card p {
+    font-size: 14px;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+
+  .value-card {
+    padding: 18px;
+  }
+
+  .value-card h3 {
+    font-size: 15px;
+  }
+
+  .value-card p {
+    font-size: 12px;
+  }
+
+  .why-choose-us h2 {
+    font-size: 24px;
+  }
+
+  .benefit-item {
+    padding: 20px;
+  }
+
+  .cta-button {
+    padding: 12px 30px;
+    font-size: 14px;
+  }
+}
+
+/* Small mobile screens - 480px and below */
+@media (max-width: 480px) {
+  .about-hero {
+    padding: 80px 0 60px 0;
+  }
+
+  .about-hero h1 {
+    font-size: 28px;
+  }
+
+  .about-hero p {
+    font-size: 14px;
+  }
+
+  .ceo-image-wrapper {
+    width: 130px;
+    height: 130px;
+  }
+
+  .ceo-name {
+    font-size: 16px;
+  }
+
+  .about-section {
+    padding: 40px 0;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .about-column {
+    gap: 12px;
+  }
+
+  .about-card {
+    padding: 18px;
+  }
+
+  .about-card h2 {
+    font-size: 16px;
+  }
+
+  .about-card p {
+    font-size: 13px;
+  }
+
+  .value-card {
+    padding: 15px;
+  }
+
+  .value-card i {
+    font-size: 22px;
+  }
+
+  .value-card h3 {
+    font-size: 14px;
+  }
+
+  .value-card p {
+    font-size: 12px;
+  }
+
+  .why-choose-us h2 {
+    font-size: 22px;
+    margin-bottom: 25px;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .benefit-item {
+    padding: 20px;
+  }
+
+  .benefit-item i {
+    font-size: 28px;
+  }
+
+  .benefit-item h3 {
+    font-size: 18px;
+  }
+
+  .about-cta {
+    padding: 60px 0;
+  }
+
+  .about-cta h2 {
+    font-size: 22px;
+  }
+
+  .about-cta p {
+    font-size: 14px;
+  }
+
+  .cta-button {
+    padding: 12px 30px;
+    font-size: 14px;
+  }
+
+  .footer-grid {
+    gap: 20px;
+  }
+}
+

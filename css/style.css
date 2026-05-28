@@ -275,12 +275,18 @@ nav{
 
 /* Medium screens - 900px and below (tablets) */
 @media (max-width:900px){
+    .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
     .cta{padding:24px}
     .cta h2{font-size:26px}
 }
 
 /* Small screens - 600px and below (small tablets/phones) */
 @media (max-width:600px){
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
     .cta{flex-direction:column;align-items:flex-start;gap:12px;padding:20px}
     .booking-btn{width:100%;max-width:none;min-width:0;padding:12px;border-radius:12px;box-shadow:none}
 }
@@ -413,6 +419,27 @@ ul li {
 .bonus {
   margin-top: 10px;
   font-weight: bold;
+}
+
+/* ================= PRICING INSTRUCTIONS ================= */
+/* Instructions text between pricing cards and email input */
+
+.pricing-instructions {
+  width: 100%;
+  max-width: 420px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #f8f8f8;
+  border-left: 4px solid #ff1010;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.pricing-instructions p {
+  margin: 8px 0;
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
 }
 
 /* ================= PROCESS ================= */
@@ -564,6 +591,15 @@ footer{
     border-top:1px solid #222;
     padding-top:20px;
     font-size:14px;
+}
+
+/* Footer bottom - copyright section styling */
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #222;
+    padding-top: 20px;
+    font-size: 14px;
+    margin-top: 30px;
 }
 
 /* ================= RESPONSIVE DESIGN - MOBILE & TABLET ================= */
